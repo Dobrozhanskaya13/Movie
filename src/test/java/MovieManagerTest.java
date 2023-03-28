@@ -20,6 +20,16 @@ public class MovieManagerTest {
         String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void testAdd2() {
+        MovieManager manager = new MovieManager();
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперед");
+        manager.addMovie("Отель Белград");
+        String[] expected = {"Бладшот", "Вперед", "Отель Белград"};
+        String[] actual = manager.findAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
     @Test
     public void testFindLast() {

@@ -13,7 +13,7 @@ public class MovieManager {
     выдавать 5, а не 10. То есть у менеджера должно быть два конструктора:
     один без параметров, выставляющий лимит менеджера в 10,
     а другой с параметром, берущий значение лимита для менеджера из параметра конструктора.
-    
+
      */
     public MovieManager(int limit) {
         this.limit = limit;
@@ -24,12 +24,12 @@ public class MovieManager {
     }
     // 1.Добавление нового фильма.
     public void addMovie(String movieTitle) {
-        String[] tmp = new String[title.length + 1];
+        String[] tmpMovie = new String[title.length + 1];
         for (int i = 0; i < title.length; i++) {
-            tmp[i] = title[i];
+            tmpMovie[i] = title[i];
         }
-        tmp[tmp.length - 1] = movieTitle;
-        title = tmp;
+        tmpMovie[tmpMovie.length - 1] = movieTitle;
+        title = tmpMovie;
     }
     // 2.Вывод всех фильмов в порядке добавления (findAll).
     public String[] findAll() {
@@ -38,17 +38,17 @@ public class MovieManager {
     }
 // 3. Вывод максимального лимита* последних добавленных фильмов в обратном от добавления порядке (findLast).
     public String[] findLast() {
-        int resultLength;
+        int resultsLength;
         if (title.length < limit) {
-            resultLength = title.length;
+            resultsLength = title.length;
         } else {
-            resultLength = limit;
+            resultsLength = limit;
         }
-        String[] tmp = new String[resultLength];
-        for (int i = 0; i < tmp.length; i++) {
-            tmp[i] = title[title.length - 1 - i];
+        String[] tmpMovie = new String[resultsLength];
+        for (int i = 0; i < tmpMovie.length; i++) {
+            tmpMovie[i] = title[title.length - 1 - i];
         }
-        return tmp;
+        return tmpMovie;
     }
 
 }

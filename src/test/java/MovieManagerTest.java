@@ -30,7 +30,26 @@ public class MovieManagerTest {
         String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
-
+    @Test
+    public void testAdd3() {
+        MovieManager manager = new MovieManager(10);
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперед");
+        manager.addMovie("Отель Белград");
+        String[] expected = {"Бладшот", "Вперед", "Отель Белград"};
+        String[] actual = manager.findAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testAdd4() {
+        MovieManager manager = new MovieManager(3);
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперед");
+        manager.addMovie("Отель Белград");
+        String[] expected = {"Бладшот", "Вперед", "Отель Белград"};
+        String[] actual = manager.findAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
     @Test
     public void testFindLast() {
         MovieManager manager = new MovieManager();
@@ -51,7 +70,7 @@ public class MovieManagerTest {
     }
 
     @Test
-    public void testFindOverLimit() {
+    public void testFindLast1() {
         MovieManager manager = new MovieManager(15);
         manager.addMovie("Бладшот");
         manager.addMovie("Вперед");
@@ -62,7 +81,7 @@ public class MovieManagerTest {
     }
 
     @Test
-    public void testFindLessLimit() {
+    public void testFindLess2() {
         MovieManager manager = new MovieManager(4);
         manager.addMovie("Бладшот");
         manager.addMovie("Вперед");
@@ -74,7 +93,7 @@ public class MovieManagerTest {
     }
 
     @Test
-    public void testFindLessLimit2() {
+    public void testFindLess3() {
         MovieManager manager = new MovieManager(2);
         manager.addMovie("Отель Белград");
         manager.addMovie("Джентельмены");
@@ -82,4 +101,24 @@ public class MovieManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+    @Test
+    public void testFindLess4() {
+        MovieManager manager = new MovieManager(10);
+        manager.addMovie("Отель Белград");
+        manager.addMovie("Джентельмены");
+        String[] expected = {"Джентельмены", "Отель Белград"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testFindLast5() {
+        MovieManager manager = new MovieManager(1);
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперед");
+        String[] expected = { "Вперед"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }

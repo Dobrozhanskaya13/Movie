@@ -36,12 +36,13 @@ public class MovieManager {
         return title;
 
     }
-// 3. Вывод максимального лимита* последних добавленных фильмов в обратном от добавления порядке (findLast).
+    // 3. Вывод максимального лимита* последних добавленных фильмов в обратном от добавления порядке (findLast).
     public String[] findLast() {
         int resultsLength;
         if (title.length < limit) {
             resultsLength = title.length;
-        } else {
+        }
+        else {
             resultsLength = limit;
         }
         String[] tmpMovie = new String[resultsLength];
